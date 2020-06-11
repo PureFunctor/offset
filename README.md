@@ -58,4 +58,4 @@ As a package:
 # Todo
 - [x] Publish to PyPI
 - [x] Command-line script
-- [ ] Utilize lazy evaluation
+- [x] Utilize lazy evaluation
