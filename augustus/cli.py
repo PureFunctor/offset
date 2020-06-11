@@ -1,7 +1,7 @@
 import argparse
 import sys
 
-from .cipher import SteppedAugustus
+from augustus.cipher import SteppedAugustus
 
 
 def non_zero_integer(value):
