@@ -25,11 +25,15 @@ def offset(message: str, direction: str, steps: int) -> str:
 
 
 def main():
-    parser = ArgumentParser(description="Encrypts a message.")
+    parser = ArgumentParser(description="Encrypts/Decrypts a message.")
 
-    parser.add_argument("--message", required=True, type=str)
-    parser.add_argument("--direction", choices="lr", default="r", type=str)
-    parser.add_argument("--steps", default=1, type=int)
+    mh = "message to be encoded/decoded"
+    dh = "direction of encoding/decoding"
+    sh = "encoding/decoding step modifier"
+
+    parser.add_argument("--message", help=mh, required=True, type=str)
+    parser.add_argument("--direction", help=dh, choices="lr", default="r", type=str)
+    parser.add_argument("--steps", help=sh, default=1, type=int)
 
     args = parser.parse_args()
 
