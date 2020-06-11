@@ -1,4 +1,5 @@
-from argparse import ArgumentParser
+import argparse
+import sys
 
 
 def offset(message: str, direction: str, steps: int) -> str:
@@ -25,19 +26,24 @@ def offset(message: str, direction: str, steps: int) -> str:
 
 
 def main():
-    parser = ArgumentParser(description="Encrypts/Decrypts a message.")
+    parser = argparse.ArgumentParser(description="Encrypts/Decrypts a message.")
 
     mh = "message to be encoded/decoded"
     dh = "direction of encoding/decoding"
     sh = "encoding/decoding step modifier"
 
-    parser.add_argument("--message", help=mh, required=True, type=str)
+    parser.add_argument("--message", help=mh, default=None, type=str)
     parser.add_argument("--direction", help=dh, choices="lr", default="r", type=str)
     parser.add_argument("--steps", help=sh, default=1, type=int)
 
     args = parser.parse_args()
 
-    print(offset(args.message, args.direction, args.steps))
+    if args.message != None:
+        print(offset(args.message, args.direction, args.steps))
+
+    else:
+        parser.print_help(sys.stderr)
+        sys.exit(1)
 
 
 if __name__ == "__main__":
