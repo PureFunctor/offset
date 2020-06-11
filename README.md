@@ -1,5 +1,5 @@
 # stepped-augustus
-A variation of the Augustus Cipher that offsets space-separated words based on the position of each character in that word.
+A variation of the Augustus Cipher that offsets space-separated words based on the position of each character. This package is still in development.
 
 # Usage
 Invoke with the following commands:
