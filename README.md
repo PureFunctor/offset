@@ -6,7 +6,7 @@
 [![PR's Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat)](http://makeapullrequest.com)  
 
 
-A variation of the Augustus Cipher that offsets space-separated words based on the position of each character; contary to what Augustus had originally practiced, letters wrap around instead of presenting a special case.
+A variation of the Augustus Cipher that offsets space-separated words based on the position of each character; contrary to what Augustus had originally practiced, letters wrap around instead of presenting a special case.
 
 
 "Whenever he wrote in cipher, he wrote B for A, C for B, and the rest of the letters on the same principle, using AA for X."
@@ -56,6 +56,6 @@ As a package:
 ```
 
 # Todo
-- [ ] Publish to PyPI
+- [x] Publish to PyPI
 - [x] Command-line script
 - [ ] Utilize lazy evaluation
