@@ -2,7 +2,7 @@ import argparse
 import sys
 
 
-def offset(message: str, direction: str, steps: int) -> str:
+def augustus(message: str, direction: str, steps: int) -> str:
 
     modifier = 1 if direction == "r" else -1
     new_message = []
@@ -39,7 +39,7 @@ def main():
     args = parser.parse_args()
 
     if args.message != None:
-        print(offset(args.message, args.direction, args.steps))
+        print(augustus(args.message, args.direction, args.steps))
 
     else:
         parser.print_help(sys.stderr)

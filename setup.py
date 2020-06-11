@@ -1,17 +1,17 @@
 from setuptools import setup
 
 setup(
-    name="offset",
+    name="stepped-augustus",
     version="1.0",
     description=(
-        "Caesar Cipher variation that offsets space-separated words based on"
-        "the position of each character."
+        "A variation of the Augustus Cipher that offsets space-separated words based on"
+        "the position of each character in that word."
     ),
     author="PureFunctor",
     author_email="purefunctor@gmail.com",
     license="MIT",
-    py_modules=["offset"],
+    py_modules=["augustus"],
     entry_points={
-        "console_scripts": ["offset=offset:main"]
+        "console_scripts": ["augustus=augustus:main"]
     },
 )
