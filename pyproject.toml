@@ -4,6 +4,13 @@ version = "1.0.0"
 description = "A variation of the Augustus Cipher that offsets space-separated words based on the position of each character."
 authors = ["PureFunctor <purefunctor@gmail.com>"]
 license = "MIT"
+readme = "README.md"
+keywords = ["augustus", "cipher"]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Environment :: Console",
+    "Topic :: Security :: Cryptography"
+]
 packages = [
     { include = "augustus" }
 ]
