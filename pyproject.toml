@@ -5,6 +5,7 @@ description = "A variation of the Augustus Cipher that offsets space-separated w
 authors = ["PureFunctor <purefunctor@gmail.com>"]
 license = "MIT"
 readme = "README.md"
+include = ["CHANGELOG.md"]
 repository = "https://github.com/PureFunctor/stepped-augustus"
 keywords = ["augustus", "cipher"]
 classifiers = [
