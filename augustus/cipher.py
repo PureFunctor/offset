@@ -1,5 +1,20 @@
 class SteppedAugustus:
-    """Represents a message to be encoded/decoded."""
+    """Represents a message to be encoded/decoded.
+
+    Usage:
+    >>> from augustus import SteppedAugustus
+    >>>
+    >>> SteppedAugustus("Hello, World", 1).right_cipher
+    'Igopt, Xqupi'
+    >>>
+    >>> SteppedAugustus("Igopt, Xqupi", 1).left_cipher
+    'Hello, World'
+    >>>
+    >>> # Alternatively the _cipher method can be used for lazy
+    >>> # evaluation and customizing the direction.
+    >>> for char in SteppedAugustus("Hello", 1)._cipher(1):
+    ...     print(char)
+    """
 
     def __init__(self, message: str, multiplier: int = 1) -> None:
 

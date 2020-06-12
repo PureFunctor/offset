@@ -47,12 +47,18 @@ Hello, World
 As a package:
 ```python
 >>> from augustus import SteppedAugustus
-
+>>>
 >>> SteppedAugustus("Hello, World", 1).right_cipher
 'Igopt, Xqupi'
-
+>>>
 >>> SteppedAugustus("Igopt, Xqupi", 1).left_cipher
 'Hello, World'
+>>>
+>>> # Alternatively the _cipher method can be used for lazy
+>>> # evaluation and customizing the direction.
+>>>
+>>> for char in SteppedAugustus("Hello", 1)._cipher(1):
+...     print(char)
 ```
 
 # Todo
