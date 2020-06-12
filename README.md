@@ -61,7 +61,3 @@ As a package:
 ...     print(char)
 ```
 
-# Todo
-- [x] Publish to PyPI
-- [x] Command-line script
-- [x] Utilize lazy evaluation
