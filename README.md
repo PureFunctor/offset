@@ -9,9 +9,9 @@
 A variation of the Augustus Cipher that offsets space-separated words based on the position of each character; contrary to what Augustus had originally practiced, letters wrap around instead of presenting a special case.
 
 
-"Whenever he wrote in cipher, he wrote B for A, C for B, and the rest of the letters on the same principle, using AA for X."
+> "Whenever he wrote in cipher, he wrote B for A, C for B, and the rest of the letters on the same principle, using AA for X."
 
-   — Suetonius, _Life of Augustus_ 88
+Suetonius, _Life of Augustus_ 88
 
 
 # Installation
