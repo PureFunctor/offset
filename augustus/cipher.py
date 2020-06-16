@@ -37,7 +37,7 @@ class SteppedAugustus:
             if char.isspace():
                 position = 1
 
-            if not char.isalpha():
+            if not (char.isascii() and char.isalpha()):
                 yield char
                 continue
 
