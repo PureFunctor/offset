@@ -15,6 +15,7 @@ class SteppedAugustus:
     >>>
     >>> # Alternatively the _cipher method can be used for lazy
     >>> # evaluation and customizing the direction.
+    >>>
     >>> for char in SteppedAugustus("Hello", 1)._cipher(1):
     ...     print(char)
     """
