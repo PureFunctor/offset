@@ -30,7 +30,7 @@ def main():
 
     args = parser.parse_args()
 
-    if args.message == None:
+    if args.message is None:
         parser.print_help(sys.stderr)
         sys.exit(1)
 

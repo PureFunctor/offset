@@ -4,6 +4,7 @@ position of each character.
 """
 
 
+__all__ = ["SteppedAugustus"]
 __title__ = "augustus"
 __author__ = "PureFunctor"
 __copyright__ = "Copyright 2020 PureFunctor"
