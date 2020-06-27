@@ -36,6 +36,25 @@ class SteppedAugustus:
         self.skip_chars = skip_chars
         self.stop_chars = stop_chars
 
+    def _do_skip(self, char: str) -> bool:
+        """Checks if a given character must be skipped."""
+        checks = (
+            not char.isascii(),
+            not char.isalpha(),
+            char in self.skip_chars,
+        )
+
+        return any(checks)
+
+    def _do_stop(self, char: str) -> bool:
+        """Checks if a given character is a stop character."""
+        checks = (
+            char.isspace(),
+            char in self.stop_chars,
+        )
+
+        return any(checks)
+
     def _cipher(self, direction: int) -> str:
         """Ciphers the message attribute given the direction
         and yields each character in a lazy manner."""
@@ -43,10 +62,10 @@ class SteppedAugustus:
         position = 1
 
         for char in self.message:
-            if char.isspace() or char in self.stop_chars:
+            if self._do_stop(char):
                 position = 1
 
-            if not (char.isascii() and char.isalpha()) or char in self.skip_chars:
+            if self._do_skip(char):
                 yield char
                 continue
 
