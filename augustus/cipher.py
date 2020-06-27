@@ -16,7 +16,13 @@ class SteppedAugustus:
     ...     print(char)
     """
 
-    def __init__(self, message: str, multiplier: int = 1) -> None:
+    def __init__(
+        self,
+        message: str,
+        multiplier: int = 1,
+        skip_chars: str = "",
+        stop_chars: str = "",
+    ) -> None:
 
         if not isinstance(message, str):
             raise TypeError("Cannot use {type(message)} as message.")
@@ -27,6 +33,9 @@ class SteppedAugustus:
         self.message = message
         self.multiplier = multiplier
 
+        self.skip_chars = skip_chars
+        self.stop_chars = stop_chars
+
     def _cipher(self, direction: int) -> str:
         """Ciphers the message attribute given the direction
         and yields each character in a lazy manner."""
@@ -34,10 +43,10 @@ class SteppedAugustus:
         position = 1
 
         for char in self.message:
-            if char.isspace():
+            if char.isspace() or char in self.stop_chars:
                 position = 1
 
-            if not (char.isascii() and char.isalpha()):
+            if not (char.isascii() and char.isalpha()) or char in self.skip_chars:
                 yield char
                 continue
 
