@@ -8,7 +8,7 @@ __title__ = "augustus"
 __author__ = "PureFunctor"
 __copyright__ = "Copyright 2020 PureFunctor"
 __license__ = "MIT"
-__version__ = "1.1.0"
+__version__ = "1.2.0"
 
 
 from augustus.cipher import SteppedAugustus
