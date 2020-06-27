@@ -23,6 +23,7 @@ python = "^3.7"
 [tool.poetry.dev-dependencies]
 black = "^19.10b0"
 pytest = "^5.4.3"
+flake8 = "^3.8.3"
 
 [tool.poetry.scripts]
 augustus = "augustus.cli:main"
