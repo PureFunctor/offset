@@ -1,3 +1,6 @@
+from typing import Container
+
+
 class SteppedAugustus:
     """Represents a message to be encoded/decoded.
 
@@ -20,8 +23,8 @@ class SteppedAugustus:
         self,
         message: str,
         multiplier: int = 1,
-        skip_chars: str = "",
-        stop_chars: str = "",
+        skip_chars: Container[str] = "",
+        stop_chars: Container[str] = "",
     ) -> None:
 
         if not isinstance(message, str):
@@ -29,6 +32,12 @@ class SteppedAugustus:
 
         if not isinstance(multiplier, int):
             raise TypeError("Cannot use {type(multiplier)} as multiplier.")
+
+        if not isinstance(skip_chars, Container):
+            raise TypeError("Cannot use {type(skip_chars)} as skip_chars.")
+
+        if not isinstance(stop_chars, Container):
+            raise TypeError("Cannot use {type(stop_chars)} as skip_chars.")
 
         self.message = message
         self.multiplier = multiplier
