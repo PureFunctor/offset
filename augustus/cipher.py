@@ -1,4 +1,4 @@
-from typing import Container
+from typing import Container, Iterable
 
 
 class SteppedAugustus:
@@ -65,7 +65,7 @@ class SteppedAugustus:
 
         return any(checks)
 
-    def _cipher(self, direction: int) -> str:
+    def _cipher(self, direction: int) -> Iterable[str]:
         """Ciphers the message attribute given the direction
         and yields each character in a lazy manner."""
 
