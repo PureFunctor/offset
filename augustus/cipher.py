@@ -1,3 +1,6 @@
+from typing import Container
+
+
 class SteppedAugustus:
     """Represents a message to be encoded/decoded.
 
@@ -16,7 +19,13 @@ class SteppedAugustus:
     ...     print(char)
     """
 
-    def __init__(self, message: str, multiplier: int = 1) -> None:
+    def __init__(
+        self,
+        message: str,
+        multiplier: int = 1,
+        skip_chars: Container[str] = "",
+        stop_chars: Container[str] = "",
+    ) -> None:
 
         if not isinstance(message, str):
             raise TypeError("Cannot use {type(message)} as message.")
@@ -24,8 +33,36 @@ class SteppedAugustus:
         if not isinstance(multiplier, int):
             raise TypeError("Cannot use {type(multiplier)} as multiplier.")
 
+        if not isinstance(skip_chars, Container):
+            raise TypeError("Cannot use {type(skip_chars)} as skip_chars.")
+
+        if not isinstance(stop_chars, Container):
+            raise TypeError("Cannot use {type(stop_chars)} as skip_chars.")
+
         self.message = message
         self.multiplier = multiplier
+
+        self.skip_chars = skip_chars
+        self.stop_chars = stop_chars
+
+    def _do_skip(self, char: str) -> bool:
+        """Checks if a given character must be skipped."""
+        checks = (
+            not char.isascii(),
+            not char.isalpha(),
+            char in self.skip_chars,
+        )
+
+        return any(checks)
+
+    def _do_stop(self, char: str) -> bool:
+        """Checks if a given character is a stop character."""
+        checks = (
+            char.isspace(),
+            char in self.stop_chars,
+        )
+
+        return any(checks)
 
     def _cipher(self, direction: int) -> str:
         """Ciphers the message attribute given the direction
@@ -34,10 +71,10 @@ class SteppedAugustus:
         position = 1
 
         for char in self.message:
-            if char.isspace():
+            if self._do_stop(char):
                 position = 1
 
-            if not (char.isascii() and char.isalpha()):
+            if self._do_skip(char):
                 yield char
                 continue
 
