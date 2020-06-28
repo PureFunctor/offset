@@ -5,19 +5,35 @@ class SteppedAugustus:
     """Represents a message to be encoded/decoded.
 
     Usage:
-    >>> from augustus import SteppedAugustus
+    >>> from augustus import SteppedAugustus as SA
     >>>
-    >>> SteppedAugustus("Hello, World", 1).right_cipher
+    >>> SA("Hello, World", 1).right_cipher
     'Igopt, Xqupi'
     >>>
-    >>> SteppedAugustus("Igopt, Xqupi", 1).left_cipher
+    >>> SA("Igopt, Xqupi", 1).left_cipher
     'Hello, World'
     >>>
     >>> # Alternatively the _cipher method can be used for lazy
     >>> # evaluation and customizing the direction.
     >>>
-    >>> for char in SteppedAugustus("Hello", 1)._cipher(1):
+    >>> for char in SA("Hello", 1)._cipher(1):
     ...     print(char)
+    >>>
+    >>> # Additionally, skip_chars and stop_chars can specified
+    >>> # to semantically modify the behaviour of the algorithm.
+    >>>
+    >>> # Shifts with 10234
+    >>> SA("Hello", skip_chars="H").right_cipher
+    'Ienos'
+    >>>
+    >>> # Shifts with 11234
+    >>> SA("Hello", stop_chars="e").right_cipher
+    'Ifnos'
+    >>>
+    >>> # Shifts with 10123
+    >>> SA("Hello", skip_chars="e", stop_chars="e").right_cipher
+    'Iemnr'
+
 
     Parameters
     ----------
