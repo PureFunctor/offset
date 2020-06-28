@@ -18,6 +18,17 @@ class SteppedAugustus:
     >>>
     >>> for char in SteppedAugustus("Hello", 1)._cipher(1):
     ...     print(char)
+
+    Parameters
+    ----------
+    message : str
+        The message to be encoded.
+    multiplier : int
+        The multiplier to be applied when encoding.
+    skip_chars : Container[str]
+        Characters to be skipped when encoding.
+    stop_chars : Container[str]
+        Characters to be used to reset the algorithm.
     """
 
     def __init__(
