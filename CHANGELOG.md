@@ -4,6 +4,17 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [UNRELEASED 1.2.0]
+### Added
+- `flake8` and `pre-commit` as development dependencies.
+- `_do_skip` and `_do_stop` methods for checking character predicates.
+- `skip_chars` and `stop_chars` parameters for extending behaviour.
+- Documentation for `SteppedAugustus` parameters.
+
+### Changed
+- Fix docstring inconsistency between `SteppedAugustus` docstring and `README.md`
+- Fix return type annotation for `SteppedAugustus._cipher`
+
 ## [1.1.0] - 2020-06-12
 ### Added
 - `CHANGELOG.md`
