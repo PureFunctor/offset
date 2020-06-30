@@ -1,4 +1,4 @@
-from typing import Container, Iterable
+from typing import Collection, Iterable
 
 
 class SteppedAugustus:
@@ -51,8 +51,8 @@ class SteppedAugustus:
         self,
         message: str,
         multiplier: int = 1,
-        skip_chars: Container[str] = "",
-        stop_chars: Container[str] = "",
+        skip_chars: Collection[str] = "",
+        stop_chars: Collection[str] = "",
     ) -> None:
 
         if not isinstance(message, str):
@@ -61,10 +61,10 @@ class SteppedAugustus:
         if not isinstance(multiplier, int):
             raise TypeError("Cannot use {type(multiplier)} as multiplier.")
 
-        if not isinstance(skip_chars, Container):
+        if not isinstance(skip_chars, Collection):
             raise TypeError("Cannot use {type(skip_chars)} as skip_chars.")
 
-        if not isinstance(stop_chars, Container):
+        if not isinstance(stop_chars, Collection):
             raise TypeError("Cannot use {type(stop_chars)} as skip_chars.")
 
         self.message = message
