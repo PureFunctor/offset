@@ -106,12 +106,12 @@ class SteppedAugustus:
                 yield char
                 continue
 
-            lower_bound = 65 if char.isupper() else 97
+            case_start = 65 if char.isupper() else 97
 
-            ord_mod = position * self.multiplier * direction
-            new_ord = (ord(char) - lower_bound + ord_mod) % 26 + lower_bound
+            offset_mod = position * self.multiplier * direction
+            true_offset = (ord(char) - case_start + offset_mod) % 26
 
-            yield chr(new_ord)
+            yield chr(case_start + true_offset)
 
             position += 1
 
