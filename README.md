@@ -70,6 +70,7 @@ As a package:
 >>> # Shifts with 11234
 >>> SA("Hello", stop_chars="e").right_cipher
 'Ifnos'
+>>>
 >>> # Shifts with 10123
 >>> SA("Hello", skip_chars="e", stop_chars="e").right_cipher
 'Iemnr'
